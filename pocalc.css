@@ -1,0 +1,21 @@
+body {
+background-image: linear-gradient(#396aba, #4d5d77);
+    height: 100%;
+    margin: 0;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+
+}
+
+h1 {
+  color: #c1c419;
+}
+h1 {
+  font: bold 2.2em "Century Gothic", "Century Gothic", "Apple Gothic", sans-serif;
+  text-align: center;
+}
+canvas {
+  display: block;
+  margin: auto;
+  background-color: white;
+}
