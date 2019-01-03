@@ -19,3 +19,10 @@ canvas {
   margin: auto;
   background-color: white;
 }
+
+button {
+  display: block;
+  margin: auto;
+  height: 3em;
+  font: 1.1em "Century Gothic", "Century Gothic", "Apple Gothic", sans-serif;
+}
