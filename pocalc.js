@@ -43,5 +43,5 @@ function dot(){
 }
 
 function clear(){
-  ctx.clearRect(0, 0, output.width, output.height);
+
 }
