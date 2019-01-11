@@ -53,27 +53,26 @@ function clear(){
     display.innerHTML = "0";
 }
 function percent(){
-  document.getElementById("displayScreen").innerHTML =".";
+
 }
 
 function plusOrminus(){
-  document.getElementById("displayScreen").innerHTML =".";
+  document.getElementById("displayScreen").innerHTML ="-";
 }
 
 function divide(){
-  document.getElementById("displayScreen").innerHTML =".";
+  document.getElementById("displayScreen").innerHTML ="/";
 }
 
 function minus(){
-  document.getElementById("displayScreen").innerHTML =".";
+  document.getElementById("displayScreen").innerHTML ="-";
 }
 
 function plus(){
-  document.getElementById("displayScreen").innerHTML =".";
+  document.getElementById("displayScreen").innerHTML ="+";
 }
 
 function equals(){
-  document.getElementById("displayScreen").innerHTML =".";
 }
 
 function fun() {
