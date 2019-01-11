@@ -1,47 +1,81 @@
 function one(){
-  document.getElementById("output").innerHTML ="1";
+  document.getElementById("displayScreen").innerHTML ="1";
 }
 
 function two(){
-  document.getElementById("output").innerHTML ="2";
+  document.getElementById("displayScreen").innerHTML ="2";
 }
 
 function tree(){
-  document.getElementById("output").innerHTML ="3";
+  document.getElementById("displayScreen").innerHTML ="3";
 }
 
 function four(){
-  document.getElementById("output").innerHTML ="4";
+  document.getElementById("displayScreen").innerHTML ="4";
 }
 
 function five(){
-  document.getElementById("output").innerHTML ="5";
+  document.getElementById("displayScreen").innerHTML ="5";
 }
 
 function six(){
-  document.getElementById("output").innerHTML ="6";
+  document.getElementById("displayScreen").innerHTML ="6";
 }
 
 function seven(){
-  document.getElementById("output").innerHTML ="7";
+  document.getElementById("displayScreen").innerHTML ="7";
 }
 
 function eight(){
-  document.getElementById("output").innerHTML ="8";
+  document.getElementById("displayScreen").innerHTML ="8";
 }
 
 function nine(){
-  document.getElementById("output").innerHTML ="9";
+  document.getElementById("displayScreen").innerHTML ="9";
 }
 
 function zero(){
-  document.getElementById("output").innerHTML ="0";
+  document.getElementById("displayScreen").innerHTML ="0";
 }
 
 function dot(){
-  document.getElementById("output").innerHTML =".";
+  document.getElementById("displayScreen").innerHTML =".";
 }
 
 function clear(){
+  carryNum = "";
+    carryOver = false;
+    displayCleared = false;
+    num1 = 0;
+    num2 = 0;
+    runningTotal = 0;
+    screenTotal = "";
+    display.innerHTML = "0";
+}
+function percent(){
+  document.getElementById("displayScreen").innerHTML =".";
+}
+
+function plusOrminus(){
+  document.getElementById("displayScreen").innerHTML =".";
+}
+
+function divide(){
+  document.getElementById("displayScreen").innerHTML =".";
+}
+
+function minus(){
+  document.getElementById("displayScreen").innerHTML =".";
+}
+
+function plus(){
+  document.getElementById("displayScreen").innerHTML =".";
+}
+
+function equals(){
+  document.getElementById("displayScreen").innerHTML =".";
+}
+
+function fun() {
 
 }
