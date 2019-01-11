@@ -1,45 +1,64 @@
+let display
+let x
+let y
+let operations
+let memorie
+
+
+
 function one(){
-  document.getElementById("displayScreen").innerHTML ="1";
+display = "1" + display
+  document.getElementById("displayScreen").value ="1";
 }
 
 function two(){
-  document.getElementById("displayScreen").innerHTML ="2";
+  display = "2" + display
+  document.getElementById("displayScreen").value ="2";
 }
 
 function tree(){
-  document.getElementById("displayScreen").innerHTML ="3";
+  display = "3" + display
+  document.getElementById("displayScreen").value ="3";
 }
 
 function four(){
-  document.getElementById("displayScreen").innerHTML ="4";
+  display = "4" + display
+  document.getElementById("displayScreen").value ="4";
 }
 
 function five(){
-  document.getElementById("displayScreen").innerHTML ="5";
+  display = "5" + display
+  document.getElementById("displayScreen").value ="5";
 }
 
 function six(){
-  document.getElementById("displayScreen").innerHTML ="6";
+  display = "6" + display
+  document.getElementById("displayScreen").value ="6";
 }
 
 function seven(){
-  document.getElementById("displayScreen").innerHTML ="7";
+  display = "7" + display
+  document.getElementById("displayScreen").value ="7";
 }
 
 function eight(){
-  document.getElementById("displayScreen").innerHTML ="8";
+  display = "8" + display
+  document.getElementById("displayScreen").value ="8";
 }
 
 function nine(){
-  document.getElementById("displayScreen").innerHTML ="9";
+  display = "9" + display
+  document.getElementById("displayScreen").value ="9";
 }
 
 function zero(){
-  document.getElementById("displayScreen").innerHTML ="0";
+  display = "0" + display
+  document.getElementById("displayScreen").value ="0";
 }
 
 function dot(){
-  document.getElementById("displayScreen").innerHTML =".";
+  display = "." + display
+  document.getElementById("displayScreen").value =".";
 }
 
 function clear(){
@@ -50,26 +69,30 @@ function clear(){
     num2 = 0;
     runningTotal = 0;
     screenTotal = "";
-    display.innerHTML = "0";
+    display.value = "0";
 }
 function percent(){
 
 }
 
 function plusOrminus(){
-  document.getElementById("displayScreen").innerHTML ="-";
+  display = "-" + display
+  document.getElementById("displayScreen").value ="-";
 }
 
 function divide(){
-  document.getElementById("displayScreen").innerHTML ="/";
+  display = "/" + display
+  document.getElementById("displayScreen").value ="/";
 }
 
 function minus(){
-  document.getElementById("displayScreen").innerHTML ="-";
+  display = "-" + display
+  document.getElementById("displayScreen").value ="-";
 }
 
 function plus(){
-  document.getElementById("displayScreen").innerHTML ="+";
+  display = "+" + display
+  document.getElementById("displayScreen").value ="+";
 }
 
 function equals(){
