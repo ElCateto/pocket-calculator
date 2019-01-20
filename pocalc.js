@@ -19,6 +19,3 @@ function claer(){
     numberOfNumbers = 0;
 }
 
-function fun() {
-  var audio = document.getElementById("audio");
-}
