@@ -1,156 +1,267 @@
-var numArr = [];
-var operArr = [];
-var numArrPos = 0;
-var operArrPos = 0;
-var numOfNums = 0;
-var numOrOper = true; 
-var locNums = [];
-var enableDec = true;
-var numAfterEql = false;
-var totalCharacs = 0;
-function num(num){
-    if (numAfterEql){
-        clearOut();
-        numAfterEql = false;
-        numArrPos = 1;
-    }
-    if (totalCharacs < 27){
-        if (numOfNums < 9){
-            OperArrPos++;
-            if (numOrOper){
-                locNums.push(num);
-                numOfNums++; 
-                totalCharacs++;
-            }
-            let intArrNum = locNums.join('');
-            numArr.push(''); numArr.push('');
-            numArr[numArrPos] = (intArrNum.toString());
-        display();     
-        }
-    }
-}
+let string = "";
+var state = 0
+let saved= "";
+let operatorUsed = 0;
+var decimalUsed = false;
+var acUsed = false;
 
-function oper(oper) {
-    if (totalCharacs < 27){
-        if (numArr[0]){
-            OperArr[OperArrPos] = (Oper.toString());
-            OperArr.push('');
-            numArrPos++;
-            locNums = []
-            numOfNums = 0;
-            totalCharacs++;
-            enableDec = true;
-            display();
-        }
+function zero() {
+  if (state == 1) {
+    string = "0"
+  } else {
+    if (operatorUsed == 1) {
+      operatorUsed = 0;
+      string = saved;
     }
+    if (decimalUsed == 1) {
+      decimalUsed = 0;
+      string = saved;
+    }
+    string += "0"
+  }
+  var div = document.getElementById("output");
+  div.innerHTML = string;
 }
-function dot(){
-    if (enableDec){
-        locNums.push('.');
-        let intArrNum = locNums.join('');
-        numArr[numArrPos] = (intArrNum.toString());
-        enableDec = false;
-        display();
+function one() {
+  if (state == 1) {
+    string = "1"
+  } else {
+    if (operatorUsed == 1) {
+      operatorUsed = 0;
+      string = saved;
     }
+    if (decimalUsed == 1) {
+      decimalUsed = 0;
+      string = saved;
+    }
+    string += "1"
+  }
+  var div = document.getElementById("output");
+  div.innerHTML = string;
 }
-function percent(){
-    if (numArr[0]){
-        numArr[numArrPos] = (numArr[numArrPos] / 100).toString();
-        display();
+function two() {
+  if (state == 1) {
+    string = "2"
+  } else {
+    if (operatorUsed == 1) {
+      operatorUsed = 0;
+      string = saved;
     }
+    if (decimalUsed == 1) {
+      decimalUsed = 0;
+      string = saved;
+    }
+    string += "2"
+  }
+  var div = document.getElementById("output");
+  div.innerHTML = string;
 }
-function negate(){
-    if (numArr[0]){
-        numArr[numArrPos] = (numArr[numArrPos] * (-1)).toString();
-        display();
+function three() {
+  if (state == 1) {
+    string = "3"
+  } else {
+    if (operatorUsed == 1) {
+      operatorUsed = 0;
+      string = saved;
     }
+    if (decimalUsed == 1) {
+      decimalUsed = 0;
+      string = saved;
+    }
+  string += "3"
+  }
+  var div = document.getElementById("output");
+  div.innerHTML = string;
 }
-function equalizer(){
-    let internalArr = [];
-    let evenNum = 0;
-    let oddNum = 1;
-    let divByZero = false;
-    for(nums in numArr){
-        if (numArr[nums] != '' && numArr[nums] != null){
-            internalArr[evenNum] = numArr[nums].toString();
-            evenNum += 2;
-        }
+function four() {
+  if (state == 1) {
+    string = "4"
+  } else {
+    if (operatorUsed == 1) {
+      operatorUsed = 0;
+      string = saved;
     }
-    for(opers in operArr){
-        if (operArr[opers] != '' && opersArr[opers] != null){
-            if (symArr[syms] == '/' && numArr.includes('0')){
-                divByZero = true;
-            }
-            internalArr[oddNum] = operArr[oper].toString();
-            oddNum += 2;
-        }
+    if (decimalUsed == 1) {
+      decimalUsed = 0;
+      string = saved;
     }
-    let mainString = internalArr.join(' ')
-    let intOut  = eval(mainString);
-    console.log(typeof(intOut))
-    numArrPos = 0;
-    numAfterEql = true;
-    clearOut();
-    numArr.push(intOut.toString());
-    if (intOut > 999999999){
-        display(true, true, intOut);
-    } else if (divByZero){
-
-    } else{
-        display(false, true, 0);
-    }
+  string += "4"
+  }
+  var div = document.getElementById("output");
+  div.innerHTML = string;
 }
-function claer(){
-    numArr = [];
-    operArr = [];
-    locNums = [];
-    operArrPos = 0;
-    numArrPos = 0;
-    numOfNums = 0;
-    numOrOper = true;
-    numAfterEql = false;
-    document.getElementById('output').value = 0
+function five() {
+  if (state == 1) {
+    string = "5"
+  } else {
+    if (operatorUsed == 1) {
+      operatorUsed = 0;
+      string = saved;
+    }
+     if (decimalUsed == 1) {
+      decimalUsed = 0;
+      string = saved;
+    }
+  string += "5"
+  }
+  var div = document.getElementById("output");
+  div.innerHTML = string;
 }
-function display(big, eql, numb){
-    let displayArr = [];
-    let evenNum = 0;
-    let oddNum = 1;
-    let notZero = true;
-    for(nums in numArr){
-        if (numArr[nums] != ''){
-            if (big && eql){
-                if (numb == Infinity){
-                    document.getElementById('output').value = 'Error';
-                    notZero = false;
-                    break;
-                } else{
-                    displayArr[evenNum] = Number(numArr[nums]).toExponential(9);
-                evenNum = 0;
-                oddNum = 1;
-                }
-            } else if (eql){
-                let decSplit = numArr[nums].split('.');
-                decSplit[0] = Number(decSplit[0]).toLocaleString();
-                displayArr[evenNum] = decSplit.join('.');
-                evenNum += 2;
-            }
-            else{
-                let decSplit = numArr[nums].split('.');
-                decSplit[0] = Number(decSplit[0]).toLocaleString();
-                displayArr[evenNum] = decSplit.join('.');
-                evenNum += 2;
-            }
-        } 
+function six() {
+  if (state == 1) {
+    string = "6"
+  } else {
+    if (operatorUsed == 1) {
+    operatorUsed = 0;
+    string = saved;
     }
-    for(Opers in operArr){
-        if (operArr[opers] != '' && operArr[opers] != null){
-            displayArr[oddNum] = opersArr[opers].toString();
-            oddNum += 2;
-        }
+    if (decimalUsed == 1) {
+      decimalUsed = 0;
+      string = saved;
     }
-    let displScre = displayArr.join(' ')
-    if (notZero){
-        document.getElementById('displayScreen').value = outStr
-    }
+  string += "6"
+  }
+  var div = document.getElementById("output");
+  div.innerHTML = string;
 }
+function seven() {
+  if (state == 1) {
+    string = "7"
+  } else {
+    if (operatorUsed == 1) {
+      operatorUsed = 0;
+      string = saved;
+    }
+    if (decimalUsed == 1) {
+      decimalUsed = 0;
+      string = saved;
+    }
+  string += "7"
+  }
+  var div = document.getElementById("output");
+  div.innerHTML = string;
+}
+function eight() {
+  if (state == 1) {
+    string = "8"
+  } else {
+    if (operatorUsed == 1) {
+      string = saved;
+      operatorUsed = 0;
+    }
+    if (decimalUsed == 1) {
+      decimalUsed = 0;
+      string = saved;
+    }
+  string += "8"
+  }
+  var div = document.getElementById("output");
+  div.innerHTML = string;
+}
+function nine() {
+  if (state == 1) {
+    string = "9"
+  } else {
+    if (operatorUsed == 1) {
+      string = saved;
+      operatorUsed = 0;
+    }
+    if (decimalUsed == 1) {
+      decimalUsed = 0;
+      string = saved;
+    }
+    string += "9"
+  }
+  var div = document.getElementById("output");
+  div.innerHTML = string;
+}
+function ac() {
+  var div = document.getElementById("output");
+  div.innerHTML = 0;
+  string = " "
+  saved = ""
+  operatorUsed = 0;
+  acUsed = true;
+  state = 0;
+  if (acUsed == true) {
+    decimalUsed = false;
+    document.getElementById("deciButton").disabled = false;
+  }
+}
+function multiply() {
+  var div = document.getElementById("output");
+  saved = string;
+  saved += "*"
+  div.innerHTML = saved;
+  state = 0;
+  operatorUsed = 1;
+  if (operatorUsed == 1) {
+    document.getElementById("deciButton").disabled = false;
+  }
+}
+function add() {
+  var div = document.getElementById("output");
+  saved = string;
+  saved += "+"
+  div.innerHTML = saved;
+  state = 0;
+  operatorUsed = 1;
+  if (operatorUsed == 1) {
+    document.getElementById("deciButton").disabled = false;
+  }
+}
+function divide() {
+  var div = document.getElementById("output");
+  saved = string;
+  saved += "/"
+  div.innerHTML = saved;
+  state = 0;
+  operatorUsed = 1;
+  if (operatorUsed == 1) {
+    document.getElementById("deciButton").disabled = false;
+  }
+}
+function subtract() {
+  var div = document.getElementById("output");
+  saved = string;
+  saved += "-"
+  div.innerHTML = saved;
+  state = 0;
+  operatorUsed = 1;
+  if (operatorUsed == 1) {
+    document.getElementById("deciButton").disabled = false;
+  }
+}
+function equals() {
+  var div= document.getElementById("output");
+  string = eval(string);
+  div.innerHTML = Number(string).toLocaleString();
+  if (Number(string) > 999999999 || Number(string) < 0.000000001) {
+    div.innerHTML = Number(string).toExponential()
+  }
+  state = 1;
+}
+function negative() {
+  var div= document.getElementById("output");
+  string = Number(string) * (-1);
+  div.innerHTML = string;
+  state = 0;
+}
+function decimal() {
+  if (decimalUsed == false){
+    var div = document.getElementById("output");
+    saved = string;
+    saved += ".";
+    div.innerHTML = saved;
+    decimalUsed = true;
+  }
+  if (decimalUsed == true) {
+    document.getElementById("deciButton").disabled = true;
+  }
+}
+function percent() {
+  var div = document.getElementById("output");
+  string = Number(string) * (0.01)
+  div.innerHTML = string;
+  state = 0;
 }
