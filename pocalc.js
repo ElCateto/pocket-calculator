@@ -2,8 +2,8 @@ let string = "";
 var state = 0
 let saved= "";
 let operatorUsed = 0;
-var decimalUsed = false;
-var acUsed = false;
+var dotUsed = false;
+var claerUsed = false;
 
 function zero() {
   if (state == 1) {
@@ -13,8 +13,8 @@ function zero() {
       operatorUsed = 0;
       string = saved;
     }
-    if (decimalUsed == 1) {
-      decimalUsed = 0;
+    if (dotUsed == 1) {
+      dotUsed = 0;
       string = saved;
     }
     string += "0"
@@ -30,13 +30,13 @@ function one() {
       operatorUsed = 0;
       string = saved;
     }
-    if (decimalUsed == 1) {
-      decimalUsed = 0;
+    if (dotUsed == 1) {
+      dotUsed = 0;
       string = saved;
     }
     string += "1"
   }
-  var div = document.getElementById("output");
+  var div = document.getElementById("displayScreen");
   div.innerHTML = string;
 }
 function two() {
@@ -47,16 +47,16 @@ function two() {
       operatorUsed = 0;
       string = saved;
     }
-    if (decimalUsed == 1) {
-      decimalUsed = 0;
+    if (dotUsed == 1) {
+      dotUsed = 0;
       string = saved;
     }
     string += "2"
   }
-  var div = document.getElementById("output");
+  var div = document.getElementById("displayScreen");
   div.innerHTML = string;
 }
-function three() {
+function tree() {
   if (state == 1) {
     string = "3"
   } else {
@@ -64,13 +64,13 @@ function three() {
       operatorUsed = 0;
       string = saved;
     }
-    if (decimalUsed == 1) {
-      decimalUsed = 0;
+    if (dotUsed == 1) {
+      dotUsed = 0;
       string = saved;
     }
   string += "3"
   }
-  var div = document.getElementById("output");
+  var div = document.getElementById("displayScreen");
   div.innerHTML = string;
 }
 function four() {
@@ -81,13 +81,13 @@ function four() {
       operatorUsed = 0;
       string = saved;
     }
-    if (decimalUsed == 1) {
-      decimalUsed = 0;
+    if (dotUsed == 1) {
+      dotUsed = 0;
       string = saved;
     }
   string += "4"
   }
-  var div = document.getElementById("output");
+  var div = document.getElementById("displayScreen");
   div.innerHTML = string;
 }
 function five() {
@@ -98,13 +98,13 @@ function five() {
       operatorUsed = 0;
       string = saved;
     }
-     if (decimalUsed == 1) {
-      decimalUsed = 0;
+     if (dotUsed == 1) {
+      dotUsed = 0;
       string = saved;
     }
   string += "5"
   }
-  var div = document.getElementById("output");
+  var div = document.getElementById("displayScreen");
   div.innerHTML = string;
 }
 function six() {
@@ -115,13 +115,13 @@ function six() {
     operatorUsed = 0;
     string = saved;
     }
-    if (decimalUsed == 1) {
-      decimalUsed = 0;
+    if (dotUsed == 1) {
+      dotUsed = 0;
       string = saved;
     }
   string += "6"
   }
-  var div = document.getElementById("output");
+  var div = document.getElementById("displayScreen");
   div.innerHTML = string;
 }
 function seven() {
@@ -132,13 +132,13 @@ function seven() {
       operatorUsed = 0;
       string = saved;
     }
-    if (decimalUsed == 1) {
-      decimalUsed = 0;
+    if (dotUsed == 1) {
+      dotUsed = 0;
       string = saved;
     }
   string += "7"
   }
-  var div = document.getElementById("output");
+  var div = document.getElementById("displayScreen");
   div.innerHTML = string;
 }
 function eight() {
@@ -149,13 +149,13 @@ function eight() {
       string = saved;
       operatorUsed = 0;
     }
-    if (decimalUsed == 1) {
-      decimalUsed = 0;
+    if (dotUsed == 1) {
+      dotUsed = 0;
       string = saved;
     }
   string += "8"
   }
-  var div = document.getElementById("output");
+  var div = document.getElementById("displayScreen");
   div.innerHTML = string;
 }
 function nine() {
@@ -166,30 +166,30 @@ function nine() {
       string = saved;
       operatorUsed = 0;
     }
-    if (decimalUsed == 1) {
-      decimalUsed = 0;
+    if (dotUsed == 1) {
+      dotUsed = 0;
       string = saved;
     }
     string += "9"
   }
-  var div = document.getElementById("output");
+  var div = document.getElementById("displayScreen");
   div.innerHTML = string;
 }
-function ac() {
-  var div = document.getElementById("output");
+function claer() {
+  var div = document.getElementById("displayScreen");
   div.innerHTML = 0;
   string = " "
   saved = ""
   operatorUsed = 0;
-  acUsed = true;
+  claerUsed = true;
   state = 0;
-  if (acUsed == true) {
-    decimalUsed = false;
+  if (claerUsed == true) {
+    dotUsed = false;
     document.getElementById("deciButton").disabled = false;
   }
 }
 function multiply() {
-  var div = document.getElementById("output");
+  var div = document.getElementById("displayScreen");
   saved = string;
   saved += "*"
   div.innerHTML = saved;
@@ -200,7 +200,7 @@ function multiply() {
   }
 }
 function add() {
-  var div = document.getElementById("output");
+  var div = document.getElementById("displayScreen");
   saved = string;
   saved += "+"
   div.innerHTML = saved;
@@ -211,7 +211,7 @@ function add() {
   }
 }
 function divide() {
-  var div = document.getElementById("output");
+  var div = document.getElementById("diplaysScreen");
   saved = string;
   saved += "/"
   div.innerHTML = saved;
@@ -222,7 +222,7 @@ function divide() {
   }
 }
 function subtract() {
-  var div = document.getElementById("output");
+  var div = document.getElementById("diplayScreen");
   saved = string;
   saved += "-"
   div.innerHTML = saved;
@@ -233,7 +233,7 @@ function subtract() {
   }
 }
 function equals() {
-  var div= document.getElementById("output");
+  var div= document.getElementById("displayScreen");
   string = eval(string);
   div.innerHTML = Number(string).toLocaleString();
   if (Number(string) > 999999999 || Number(string) < 0.000000001) {
@@ -242,25 +242,25 @@ function equals() {
   state = 1;
 }
 function negative() {
-  var div= document.getElementById("output");
+  var div= document.getElementById("diplayScreen");
   string = Number(string) * (-1);
   div.innerHTML = string;
   state = 0;
 }
-function decimal() {
-  if (decimalUsed == false){
-    var div = document.getElementById("output");
+function dot() {
+  if (dotUsed == false){
+    var div = document.getElementById("displayScreen");
     saved = string;
     saved += ".";
     div.innerHTML = saved;
-    decimalUsed = true;
+    dotUsed = true;
   }
-  if (decimalUsed == true) {
+  if (dotUsed == true) {
     document.getElementById("deciButton").disabled = true;
   }
 }
 function percent() {
-  var div = document.getElementById("output");
+  var div = document.getElementById("displayScreen");
   string = Number(string) * (0.01)
   div.innerHTML = string;
   state = 0;
