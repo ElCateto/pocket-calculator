@@ -199,7 +199,7 @@ function multiply() {
     document.getElementById("deciButton").disabled = false;
   }
 }
-function add() {
+function plus() {
   var div = document.getElementById("displayScreen");
   saved = string;
   saved += "+"
@@ -221,7 +221,7 @@ function divide() {
     document.getElementById("deciButton").disabled = false;
   }
 }
-function subtract() {
+function minus() {
   var div = document.getElementById("diplayScreen");
   saved = string;
   saved += "-"
@@ -241,7 +241,7 @@ function equals() {
   }
   state = 1;
 }
-function negative() {
+function plusOrminus() {
   var div= document.getElementById("diplayScreen");
   string = Number(string) * (-1);
   div.innerHTML = string;
