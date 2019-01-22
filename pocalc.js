@@ -1,13 +1,18 @@
 var numberOfNumbers = 0
-var numArr = [];
-var numArrPos = 0;
-var enableDec = true;
+var numArray = ['',''];
+var numArrayPost = 0;
+
+var enableDeci = true;
+var clearDispl = false
 function num(number) {
   if (numberOfNumbers < 9){
+    if (clearDispl) {
     document.getElementById('displayScreen').value = document.getElementById('displayScreen').value + number;
     numberOfNumbers++
   }
 }
+}
+
 function oper(symbol){
   document.getElementById('displayScreen').value = document.getElementById('displayScreen').value + symbol;
   numberOfNumbers = 0;
@@ -15,23 +20,25 @@ function oper(symbol){
 function equals(){
   let answer = eval(document.getElementById('displayScreen').value)
   document.getElementById('displayScreen').value = answer
+  clearDispl = true;
 }
 
 function claer(){
     document.getElementById('displayScreen').value = 0
+    clearDispl = true;
     numberOfNumbers = 0;
 }
 
 function plusOrminus(){
-     if (numArr[0]){
-        numArr[numArrPos] = (numArr[numArrPos] * (-1)).toString();
+     if (numArray[0]){
+        numArray[numArrayPost] = (numArray[numArrayPost] * (-1)).toString();
         display();
     }
 }
 
 function percent(){
-    if (numArr[0]){
-        numArr[numArrPos] = (numArr[numArrPos] / (100)).toString();
+    if (numArray[0]){
+        numArray[numArrayPost] = (numArray[numArrayPost] / (100)).toString();
         display();
     }
 }
